@@ -1,0 +1,182 @@
+:root {
+    --bg: #f5f7fb;
+    --text-dark: #1f2937;
+    --muted: #6b7280;
+    --accent: #3b82f6;
+}
+
+/* Global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    padding: 20px;
+    color: var(--text-dark);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #223759;
+}
+
+.subtitle {
+    margin-top: 5px;
+    color: var(--muted);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: bolder;
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* GALLERY GRID */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+/* Caption hover overlay */ 
+ .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .caption {
+    transform: translateY(0%);
+}
+
+/* Fade animation */
+.card.hidden {
+  display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 80vw;
+    max-height: 70vh;
+    border-radius: 10px;
+}
+
+.lightbox-caption {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+.lightbox-tools {
+    margin-top: 12px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-btn {
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    cursor: pointer;
+}
+
+.counter {
+    color: white;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.close-btn, .nav {
+    position: fixed;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    top: 20px;
+}
+
+.close-btn {
+    right: 20px;
+}
+
+.nav.prev {
+    left: 30px;
+    top: 50%;
+}
+
+.nav.next {
+    right: 30px;
+    top: 50%;
+}

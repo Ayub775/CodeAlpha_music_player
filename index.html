@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Image Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Responsive Image Gallery</h1>
+        <p class="subtitle">Lightbox, next/prev, filters & smooth transitions</p>
+    </header>
+
+    <!-- FILTER BUTTONS -->
+    <nav class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="people">People</button>
+        <button class="filter-btn" data-filter="architecture">Architecture</button>
+    </nav>
+
+    <!-- GALLERY -->
+    <main class="gallery">
+        <figure class="card" data-category="nature">
+            <img src="images/img1.webp" alt="Mountain view" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="people">
+            <img src="images/img2.webp" alt="Portrait" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img3.webp" alt="City building" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="nature">
+            <img src="images/img4.webp" alt="Forest" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="people">
+            <img src="images/img5.jpg" alt="Smiling person" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img6.webp" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img7.avif" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img8.jpg" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img9.avif" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img10.avif" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img11.jpg" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <figure class="card" data-category="architecture">
+            <img src="images/img12.jpg" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <!-- <figure class="card" data-category="architecture">
+            <img src="images/img13.jpg" alt="Bridge" class="gallery-img" />
+            <figcaption class="caption">Bridge — Architecture</figcaption>
+        </figure> -->
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="close-btn">&times;</button>
+
+        <button class="nav prev">&#10094;</button>
+
+        <div class="lightbox-content">
+            <img id="lightboxImage" class="lightbox-img" alt="" />
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+
+            <div class="lightbox-tools">
+                <span id="imgCounter" class="counter"></span>
+                <button id="downloadBtn" class="tool-btn">⬇ Download</button>
+                <button id="fullscreenBtn" class="tool-btn">⛶ Fullscreen</button>
+            </div>
+        </div>
+
+        <button class="nav next">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
