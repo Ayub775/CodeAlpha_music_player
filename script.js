@@ -16,9 +16,8 @@ const fullscreenBtn = document.getElementById("fullscreenBtn");
 let visibleCards = cards;
 let currentIndex = 0;
 
-// --------------------------------------------------
 // FILTER BUTTONS
-// --------------------------------------------------
+
 filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
 
@@ -41,9 +40,8 @@ filterBtns.forEach(btn => {
     });
 });
 
-// --------------------------------------------------
 // UPDATE LIGHTBOX INFO
-// --------------------------------------------------
+
 function updateImageInfo(card) {
     const img = card.querySelector(".gallery-img");
     const caption = card.querySelector(".caption").textContent;
@@ -56,9 +54,9 @@ function updateImageInfo(card) {
     downloadBtn.setAttribute("data-url", img.src);
 }
 
-// --------------------------------------------------
+
 // OPEN LIGHTBOX
-// --------------------------------------------------
+
 cards.forEach(card => {
     card.addEventListener("click", () => {
         visibleCards = cards.filter(c => !c.classList.contains("hidden"));
@@ -70,16 +68,16 @@ cards.forEach(card => {
     });
 });
 
-// --------------------------------------------------
+
 // CLOSE LIGHTBOX
-// --------------------------------------------------
+
 closeBtn.addEventListener("click", () => {
     lightbox.classList.remove("open");
 });
 
-// --------------------------------------------------
+
 // NEXT / PREVIOUS
-// --------------------------------------------------
+
 nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % visibleCards.length;
     updateImageInfo(visibleCards[currentIndex]);
@@ -90,9 +88,9 @@ prevBtn.addEventListener("click", () => {
     updateImageInfo(visibleCards[currentIndex]);
 });
 
-// --------------------------------------------------
+
 // KEYBOARD SUPPORT
-// --------------------------------------------------
+
 document.addEventListener("keydown", e => {
     if (!lightbox.classList.contains("open")) return;
 
@@ -101,9 +99,9 @@ document.addEventListener("keydown", e => {
     if (e.key === "ArrowLeft") prevBtn.click();
 });
 
-// --------------------------------------------------
+
 // DOWNLOAD BUTTON
-// --------------------------------------------------
+
 downloadBtn.addEventListener("click", () => {
     const url = downloadBtn.getAttribute("data-url");
     const a = document.createElement("a");
@@ -115,9 +113,9 @@ downloadBtn.addEventListener("click", () => {
     a.remove();
 });
 
-// --------------------------------------------------
+
 // FULLSCREEN MODE
-// --------------------------------------------------
+
 fullscreenBtn.addEventListener("click", () => {
     if (!document.fullscreenElement) {
         lightboxImage.requestFullscreen();
